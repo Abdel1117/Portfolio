@@ -1,16 +1,27 @@
 import Image from "next/image";
 import Dev from "../../../public/svg/dev_image.svg";
+import { Button } from "@/UI/Button/Button";
 
 export const BlockHero = () => {
   return (
-    <section className="mt-[75px] p-1 lg:p-10 xl:p-20 grid grid-cols-1 sm:grid-cols-2  gap-[20px] ">
-      <div className="ml-auto  flex flex-col h justify-center lg:justify-start p-1 md:p-2 lg:p-3 w-full max-w-180">
+    <section className="px-1 pt-28 pb-16 sm:px-4 lg:px-10 sm:max-w-7xl  grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-5 mx-auto">
+      <div className="flex justify-center lg:justify-start max-w-[90%] sm:max-w-[75%] md:max-w-[50%] lg:max-w-full lg:pr-8 ">
+        <div className="relative overflow-hidden ">
+          <Image
+            src={Dev}
+            alt="Illustration développeur"
+            className="rounded-full transition-all duration-300 shadow-sm "
+            priority
+          />
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center lg:items-start  w-full lg:max-w-180">
         <h2 className="text-xl">Abderahmane Adjali</h2>
-        <h3 className="text-2xl md:text-5xl my-4">
+        <h3 className="text-center lg:text-start text-2xl md:text-5xl my-4">
           Développeur Web Full Stack
         </h3>
 
-        <p className="text-base md:text-lg">
+        <p className="text-center lg:text-left sm:text-base md:text-lg">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur,
           debitis! Aliquam facilis blanditiis accusantium sapiente ut similique
           incidunt illum a quas nemo. Dolorum, ut molestiae. Dicta, doloribus
@@ -18,20 +29,21 @@ export const BlockHero = () => {
           corrupti. Aliquam, neque?
         </p>
 
-        <div className="my-4">
-          <button className="bg-green-light rounded-lg p-2 hover:cursor-pointer mr-6">
-            Get in Touch
-          </button>
-          <button className="bg-green-light rounded-lg p-2 hover:cursor-pointer">
-            Available now
-          </button>
+        <div className="my-4 ">
+          <Button
+            text={"Get in Touch"}
+            action={() => {
+              console.log("/");
+            }}
+          />
+          <Button
+            text={"Get in Touch"}
+            action={() => {
+              console.log("/");
+            }}
+          />
         </div>
       </div>
-      <Image
-        className="w-full sm:h-auto  rounded-lg  "
-        src={Dev}
-        alt="An image representing someone developping"
-      />
     </section>
   );
 };
