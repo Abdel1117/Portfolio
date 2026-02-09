@@ -1,3 +1,4 @@
+import { IconsObjectType } from "@/Types/IconsType/IconsType";
 import Image from "next/image";
 import React from "react";
 interface canvasProps {
@@ -6,7 +7,7 @@ interface canvasProps {
 
 export const Canvas = ({ icons }: canvasProps) => {
   return (
-    <section className="w-full pt-12">
+    <section className="w-full pt-12 my-14">
       <div className="flex items-center gap-5">
         {icons?.map((val: IconsObjectType, index: number) => (
           <div

@@ -13,14 +13,14 @@ export const MyProject = () => {
     { icons: Tailwind, alt: "Tailwind" },
   ];
   return (
-    <section className="px-1 pt-28 pb-16 sm:px-3 lg:px-6 sm:max-w-7xl mx-auto outline">
-      <div className="flex items-center justify-center">
-        <h2 className="text-center lg:text-start text-2xl md:text-5xl my-4">
+    <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl mx-auto my-14 outline-1">
+      <div className="flex items-center justify-center mb-12">
+        <h2 className="text-center lg:text-start text-2xl md:text-5xl ">
           Les projets auquelles j'ai contribué
         </h2>
       </div>
 
-      <div className="p-4 grid grid-cols-2  grid-rows-2 gap-5">
+      <div className="p-4 grid lg:grid-cols-2 lg:grid-rows-2 gap-5">
         <ProjectCard
           image={Dev}
           category={"Front-End"}

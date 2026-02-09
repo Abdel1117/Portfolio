@@ -19,7 +19,7 @@ export const BlockHeroWithBlob = ({
 }: BlockHeroWithBlobProps) => {
   return (
     <>
-      <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-[20px] my-14 mx-auto">
+      <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-[20px] my-14 mx-auto outline-1">
         <div className="flex flex-col">
           <div className="flex flex-col items-center lg:items-start justify-center mb-8 lg:mb-12">
             <h2 className="text-2xl lg:text-5xl font-bold">{title}</h2>

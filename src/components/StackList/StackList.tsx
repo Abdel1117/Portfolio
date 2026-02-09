@@ -20,7 +20,7 @@ export const StackList = () => {
     { icons: Tailwind, alt: "Tailwind" },
   ];
   return (
-    <section className="px-1 md:pt-28 md:pb-16 sm:px-4 my-14 mx-auto ">
+    <section className="px-1 md:pt-28 md:pb-16 sm:px-4 my-14 mx-auto outline-1">
       <div>
         <h2 className="text-2xl lg:text-5xl font-bold text-center">
           Mes Stacks Techniques:

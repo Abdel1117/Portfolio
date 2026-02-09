@@ -1,12 +1,14 @@
 "use client";
 import { BlockHero } from "@/components/BlockHero/BlockHero";
 import { BlockHeroWithBlob } from "@/components/BlockHeroWithBlob/BlockHeroWithBlob";
+import { ConclusionBlock } from "@/components/ConclusionBlock/ConclusionBlock";
+import { FAQ } from "@/components/FAQ/FAQ";
 import { MyProject } from "@/components/MyProjects/MyProject";
 
 import { StackList } from "@/components/StackList/StackList";
 export default function Home() {
   return (
-    <main className="bg-[#F0F0F4] dark:bg-[#151C25] min-h-[100vh]">
+    <main className="bg-[#F0F0F4] dark:bg-[#151C25]">
       <BlockHero />
       <hr className="text-back dark:text-green-light my-24" />
       <BlockHeroWithBlob
@@ -18,6 +20,8 @@ export default function Home() {
       />
       <StackList />
       <MyProject />
+      <FAQ />
+      <ConclusionBlock />
     </main>
   );
 }

@@ -21,7 +21,7 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div
-      className={`h-full bg-[#151C25] rounded-lg overflow-hidden ${takeTwoCol ? "col-span-2" : "col-span-1"}`}
+      className={`h-full bg-white dark:bg-[#151C25] rounded-lg overflow-hidden ${takeTwoCol ? "lg:col-span-2" : "col-span-1"}`}
     >
       <div className="relative overflow-hidden">
         <Image
@@ -30,7 +30,7 @@ export const ProjectCard = ({
           alt={title}
         />
       </div>
-      <div className="p-6">
+      <div className="md:p-6">
         <h1 className="title-font text-center text-lg font-medium text-white mb-3">
           {title}
         </h1>
@@ -49,7 +49,7 @@ export const ProjectCard = ({
             ))}
           </div>
         </div>
-        <div className="flex items-center justify-center flex-wrap py-6">
+        <div className="flex flex-wrap  items-center justify-center py-6">
           <Button text="Code Source" />
           <Button text="Visiter le site" />
         </div>

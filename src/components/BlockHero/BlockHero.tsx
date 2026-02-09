@@ -4,7 +4,7 @@ import { Button } from "@/UI/Button/Button";
 
 export const BlockHero = () => {
   return (
-    <section className="px-1 pt-28 pb-16 sm:px-4 lg:px-10 sm:max-w-7xl  grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-5 mx-auto">
+    <section className="px-1 pt-28 pb-16 sm:px-4 lg:px-10 sm:max-w-7xl  grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-5 mx-auto outline-1">
       <div className="flex justify-center lg:justify-start max-w-[90%] sm:max-w-[75%] md:max-w-[50%] lg:max-w-full lg:pr-8 ">
         <div className="relative overflow-hidden ">
           <Image
