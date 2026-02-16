@@ -17,6 +17,7 @@ export const ThemeButton = () => {
 
   return (
     <button
+      type="button"
       className="hover:cursor-pointer dark:text-white text-black p-1 transition-colors"
       onClick={toggleTheme}
       aria-label={

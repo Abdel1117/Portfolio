@@ -1,19 +1,39 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { ThemeButton } from "@/components/ThemeButton/ThemeButton";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathname = usePathname();
   const [toogle, setToogle] = useState<boolean>(false);
 
   const toogleMobileMenu = () => {
     setToogle((tl) => !tl);
   };
+
+  const isActive = (href: string) => pathname === href;
+
+  const desktopLinkClass = (active: boolean) =>
+    [
+      "block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold border-b lg:border-0",
+      "border-gray-100 dark:border-gray-700",
+      active
+        ? "text-white dark:text-black bg-slate-light dark:bg-green-light"
+        : "text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
+    ].join(" ");
+
+  const mobileLinkClass = (active: boolean) =>
+    [
+      "block py-2 font-semibold border-b hover:underline",
+      "border-black dark:border-gray-700",
+      active ? "text-green-light underline" : "text-black dark:text-white",
+    ].join(" ");
+
   return (
-    <header>
-      <nav className="bg-white dark:bg-slate-light px-4 lg:px-6 py-6.5">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+    <header className="fixed top-0 w-full z-50 bg-white dark:bg-gray-900">
+      <nav className="bg-white dark:bg-slate-light px-4 lg:px-6 py-6.5 ">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
           <Link href="/" className="flex items-center">
             <span className="self-center text-xl font-semibold whitespace-nowrap text-black dark:text-green-light">
               AA
@@ -28,7 +48,7 @@ export const Header = () => {
               }}
               data-collapse-toggle="mobile-menu-2"
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-black dark:text-white rounded-lg lg:hidden bg-white dark:bg-slate-800 hover:cursor-pointer hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 ml-1 text-sm text-black dark:text-white rounded-lg lg:hidden bg-white dark:bg-slate-800 hover:cursor-pointer hover:bg-gray-100 focus:-none focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="mobile-menu-2"
               aria-expanded="false"
             >
@@ -66,49 +86,18 @@ export const Header = () => {
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <Link
-                  href="#"
-                  className="block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold text-white dark:text-black border-b border-gray-100 bg-slate-light dark:bg-green-light lg:border-0 lg dark:border-gray-700"
-                  aria-current="page"
+                  href="/"
+                  className={desktopLinkClass(isActive("/"))}
+                  aria-current={isActive("/") ? "page" : undefined}
                 >
-                  Home
+                  Accueil
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
-                  className="block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold text-white dark:text-black border-b border-gray-100 bg-slate-light dark:bg-green-light lg:border-0 lg dark:border-gray-700"
-                >
-                  Company
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold text-white dark:text-black border-b border-gray-100 bg-slate-light dark:bg-green-light lg:border-0 lg dark:border-gray-700"
-                >
-                  Marketplace
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold text-white dark:text-black border-b border-gray-100 bg-slate-light dark:bg-green-light lg:border-0 lg dark:border-gray-700"
-                >
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold text-white dark:text-black border-b border-gray-100 bg-slate-light dark:bg-green-light lg:border-0 lg dark:border-gray-700"
-                >
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg font-semibold text-white dark:text-black border-b border-gray-100 bg-slate-light dark:bg-green-light lg:border-0 lg dark:border-gray-700"
+                  href="/contact"
+                  className={desktopLinkClass(isActive("/contact"))}
+                  aria-current={isActive("/contact") ? "page" : undefined}
                 >
                   Contact
                 </Link>
@@ -124,49 +113,19 @@ export const Header = () => {
             <ul className="flex flex-col font-medium">
               <li>
                 <Link
-                  href="#"
-                  className="block py-2 font-semibold text-black dark:text-white  border-b border-black dark:border-gray-700 hover:underline"
-                  aria-current="page"
+                  href="/"
+                  className={mobileLinkClass(isActive("/"))}
+                  aria-current={isActive("/") ? "page" : undefined}
                 >
-                  Home
+                  Accueil
                 </Link>
               </li>
+
               <li>
                 <Link
-                  href="#"
-                  className="block py-2 font-semibold text-black dark:text-white  border-b border-black dark:border-gray-700 hover:underline"
-                >
-                  Company
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block py-2 font-semibold text-black dark:text-white  border-b border-black dark:border-gray-700 hover:underline"
-                >
-                  Marketplace
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block py-2 font-semibold text-black dark:text-white  border-b border-black dark:border-gray-700 hover:underline"
-                >
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block py-2 font-semibold text-black dark:text-white  border-b border-black dark:border-gray-700 hover:underline"
-                >
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="block py-2 font-semibold text-black dark:text-white dark:border-gray-700 hover:underline"
+                  href="/contact"
+                  className={mobileLinkClass(isActive("/contact"))}
+                  aria-current={isActive("/contact") ? "page" : undefined}
                 >
                   Contact
                 </Link>

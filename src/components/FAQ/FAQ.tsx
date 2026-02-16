@@ -1,9 +1,11 @@
 "use client";
 import { Title } from "@/UI/Title/Title";
-import React from "react";
 import { FAQList } from "./FAQList";
 import { faqData } from "./faqData";
 import { Button } from "@/UI/Button/Button";
+import { useRef } from "react";
+import { useFadeFromLeftOnScroll } from "@/Hooks/useFadeFromLeftOnScroll";
+import { useFadeFromRightOnScroll } from "@/Hooks/useFadeFromRightOnScroll";
 
 /**
  * FAQ Component
@@ -14,23 +16,33 @@ import { Button } from "@/UI/Button/Button";
  * Dependency Inversion: Depends on abstractions (interfaces) not implementations
  */
 export const FAQ = () => {
-  const send = () => {
-    console.log("send");
-  };
+  const leftBlock = useRef<HTMLDivElement>(null);
+  const rightBlock = useRef<HTMLDivElement>(null);
+
+  useFadeFromLeftOnScroll(leftBlock, 0.2, 1);
+  useFadeFromRightOnScroll(rightBlock, 0.2, 1);
+
   return (
-    <section className="px-4 md:pt-28 md:pb-16 sm:px-6 lg:px-10 max-w-7xl my-14 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 outline-2">
-      <div className="flex flex-col justify-center items-centermb-8 text-center">
+    <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl mx-auto">
+      <div
+        ref={leftBlock}
+        className="flex flex-col justify-center items-center mb-8 text-center"
+      >
         <Title title="Questions Fréquentes" />
         <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Trouvez les réponses aux questions les plus fréquemment posées sur mes
           services et mon parcours.
         </p>
         <div className="w-full mt-5">
-          <Button text="Posez votre question" action={() => send()} />
+          <Button
+            text="Posez votre question"
+            link={"/contact"}
+            target="_self"
+          />
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto">
+      <div ref={rightBlock} className="max-w-4xl mx-auto">
         <FAQList items={faqData} />
       </div>
     </section>

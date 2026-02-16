@@ -1,14 +1,27 @@
+"use client";
+
+import { useRef } from "react";
+import { useFadeFromLeftOnScroll } from "@/Hooks/useFadeFromLeftOnScroll";
+import { useFadeFromRightOnScroll } from "@/Hooks/useFadeFromRightOnScroll";
+import Link from "next/link";
+
 export const ConclusionBlock = () => {
+  const textBlock = useRef<HTMLDivElement>(null);
+  const ctaBlock = useRef<HTMLDivElement>(null);
+
+  useFadeFromLeftOnScroll(textBlock, 0.2, 1);
+  useFadeFromRightOnScroll(ctaBlock, 0.2, 1);
+
   const handleStartConversation = () => {
     // Ajouter ici la logique pour démarrer une conversation (contact, email, etc.)
     console.log("Start conversation");
   };
 
   return (
-    <section className="relative  max-w-7xl px-4 md:pt-28 md:pb-16 sm:px-6 lg:px-10 mx-auto overflow-hidden outline-2">
+    <section className="relative max-w-7xl py-6 mb-6 lg:mb-0 px-4 md:pt-28 md:pb-16 sm:px-6 lg:px-10 mx-auto overflow-hidden ">
       <div className="relative w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* Contenu texte */}
-        <div className="flex-1 text-center md:text-left">
+        <div ref={textBlock} className="flex-1 text-center md:text-left">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white-light mb-4">
             Vous avez un Projet en tête ?
           </h2>
@@ -23,13 +36,13 @@ export const ConclusionBlock = () => {
         </div>
 
         {/* Bouton CTA */}
-        <div className="flex-shrink-0">
-          <button
-            onClick={handleStartConversation}
+        <div ref={ctaBlock} className="shrink-0 mt-4 lg:mt-0">
+          <Link
+            href={"/contact"}
             className="px-8 py-4 bg-green-light hover:bg-green-light/80 text-slate-light font-bold text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl hover:cursor-pointer"
           >
-            Start a Conversation
-          </button>
+            Discutons-en
+          </Link>
         </div>
       </div>
     </section>

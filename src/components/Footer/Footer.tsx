@@ -7,47 +7,39 @@ import { getCurrentYear } from "@/utils/Date/DateFormater";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-slate-light rounded-base shadow-xs  ">
+    <footer className="relative z-10 bg-white dark:bg-slate-light rounded-base">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
-          <a
-            href="https://flowbite.com/"
+          <Link
+            href="/"
             className="flex items-center justify-center sm:justify-baseline mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
             <Image src={AA_Logo} width={75} height={75} alt="Flowbite Logo" />
-          </a>
+          </Link>
           <ul className="flex flex-wrap items-center justify-center sm:justify-baseline mb-6 text-sm font-medium text-body sm:mb-0">
             <li>
-              <a
-                href="#"
-                className="hover:underline me-4 md:me-6 font-semibold dark:text-gray-light text-black"
-              >
-                A propos
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
+              <Link
+                href="/politique-de-confidentialite"
                 className="hover:underline me-4 md:me-6 font-semibold dark:text-gray-light text-black"
               >
                 Politique de confidentialité
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/mentions-legales"
                 className="hover:underline me-4 md:me-6 font-semibold dark:text-gray-light text-black"
               >
-                License
-              </a>
+                Mentions Légales
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="hover:underline font-semibold dark:text-gray-light text-black"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

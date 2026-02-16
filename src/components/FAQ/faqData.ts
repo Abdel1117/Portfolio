@@ -8,38 +8,55 @@ import { FAQItemData } from "./types";
 export const faqData: FAQItemData[] = [
   {
     id: "1",
-    question: "Quels sont les services que vous proposez ?",
+    question: "Recherchez-vous un CDI ?",
     answer:
-      "Je propose des services de développement web front-end, incluant la création d'interfaces utilisateur modernes et responsive, l'intégration de designs, et le développement d'applications web avec React, Next.js et TypeScript. Je travaille également sur des projets de géomatique et d'analyse spatiale.",
+      "Oui, je recherche une opportunité en CDI, idéalement sur un poste full-stack avec une forte sensibilité cybersécurité (Security by Design).",
   },
   {
     id: "2",
-    question: "Quelles technologies maîtrisez-vous ?",
+    question: "Êtes-vous mobile géographiquement ?",
     answer:
-      "Je maîtrise principalement React, Next.js, TypeScript, Tailwind CSS pour le front-end. J'ai également des compétences en analyse géospatiale, avec des outils comme QGIS et des bibliothèques JavaScript pour la cartographie interactive. Je suis constamment en apprentissage pour rester à jour avec les dernières technologies.",
+      "Je ne suis pas ouvert à une mobilité hors Île-de-France. Je suis ouvert à un modèle hybride ou remote selon l’organisation.",
   },
   {
     id: "3",
-    question: "Combien de temps faut-il pour réaliser un projet ?",
-    answer:
-      "La durée d'un projet dépend de sa complexité et de ses exigences. Un site vitrine simple peut prendre 2-3 semaines, tandis qu'une application web plus complexe peut nécessiter 1-3 mois. Je fournis toujours un calendrier détaillé après l'analyse de vos besoins.",
+    question: "Quelle est votre disponibilité ?",
+    answer: "Je suis disponible immédiatement pour démarrer.",
   },
   {
     id: "4",
-    question: "Travaillez-vous en freelance ou en tant qu'employé ?",
+    question: "Quels services / missions pouvez-vous prendre en charge ?",
     answer:
-      "Je suis actuellement étudiant en master de Géoinformatique Appliquée à l'Université de Salzbourg en Autriche, et je suis disponible pour des projets freelance. Je suis également ouvert à des opportunités d'emploi après l'obtention de mon diplôme.",
+      "Développement full-stack : interfaces web modernes, intégration, API, base de données, authentification/autorisation, optimisation des performances, et mise en production (avec une approche sécurité dès la conception).",
   },
   {
     id: "5",
-    question: "Comment puis-je vous contacter pour un projet ?",
+    question: "Quelles technologies utilisez-vous ?",
     answer:
-      "Vous pouvez me contacter via le formulaire de contact sur mon portfolio, ou directement par email. Je réponds généralement dans les 24-48 heures. N'hésitez pas à me présenter votre projet, même si vous n'avez pas encore tous les détails.",
+      "TypeScript, React, Next.js, Tailwind CSS, Bootstrap, Node.js, FastAPI, MySQL, MongoDB, PHP. Côté infra/ops : Nginx. Côté CI/CD : Jenkins, CircleCI (et pratiques d’automatisation build/test/deploy).",
   },
   {
     id: "6",
-    question: "Proposez-vous la maintenance après la livraison ?",
+    question: "Quelle est votre approche en cybersécurité ?",
     answer:
-      "Oui, je propose des services de maintenance et de support après la livraison du projet. Cela inclut les corrections de bugs, les mises à jour de sécurité, et les modifications mineures. Nous pouvons discuter d'un plan de maintenance adapté à vos besoins.",
+      "Security by Design : bonnes pratiques OWASP, validation des entrées, gestion des secrets, contrôle d’accès, durcissement côté serveur, revue des risques, et attention particulière à la sécurité dans les pipelines CI/CD.",
+  },
+  {
+    id: "7",
+    question: "Êtes-vous à l’aise avec la mise en production et la CI/CD ?",
+    answer:
+      "Oui. Je peux intervenir sur la configuration et l’amélioration de pipelines (lint/tests/build/deploy), et sur les sujets de déploiement côté serveur (ex : Nginx) pour des releases plus fiables.",
+  },
+  {
+    id: "8",
+    question: "Proposez-vous de la maintenance / support après livraison ?",
+    answer:
+      "Oui : corrections de bugs, mises à jour, durcissement sécurité, améliorations mineures et accompagnement selon un plan défini.",
+  },
+  {
+    id: "9",
+    question: "Comment vous contacter ?",
+    answer:
+      "Via le formulaire de contact du portfolio ou par email. Je réponds généralement sous 24 à 48 heures.",
   },
 ];

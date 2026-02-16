@@ -5,6 +5,7 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { ThemeScript } from "@/components/ThemeScript/ThemeScript";
 import { Providers } from "@/providers/root-provider";
+import { ParticlesBg } from "@/components/ParticlesBG/ParticlesBG";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -48,11 +49,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F0F0F4] dark:bg-[#151C25]`}
         suppressHydrationWarning
       >
         <Providers>
           <Header />
+          <ParticlesBg />
           {children}
           <Footer />
         </Providers>

@@ -8,15 +8,14 @@ import { MyProject } from "@/components/MyProjects/MyProject";
 import { StackList } from "@/components/StackList/StackList";
 export default function Home() {
   return (
-    <main className="bg-[#F0F0F4] dark:bg-[#151C25]">
+    <main className="overflow-x-hidden outline-2">
       <BlockHero />
-      <hr className="text-back dark:text-green-light my-24" />
       <BlockHeroWithBlob
         title="A propos de moi"
         underTitle="Qui-suis-je?"
-        para="I am currently a master’s student in Applied Geoinformatics at the  University of Salzburg, Austria. I have a keen interest in front-end and  GIS development. My goal is to use my expertise in building exciting  and functional user interfaces. Additionally, employ my geospatial  analysis, modeling, and process automation skills to engineer  innovative, customizable, and sustainable software solutions. The following are tech stacks that I use regularly:"
+        para="Passionné par le développement web depuis 2019, j’ai construit mon parcours entre apprentissage autonome, des formations diplômante et expérience en alternance. Aujourd’hui développeur Full Stack avec une expertise en DevSecOps, je m’attache à créer des applications à la fois performantes, sécurisées et maintenables. J’aime transformer des besoins complexes en solutions claires, robustes et bien structurées."
         buttonText="Télécharger mon CV"
-        buttonLink="/Cv"
+        buttonLink="/images/cv/CV__Abderahmane_Adjali.pdf"
       />
       <StackList />
       <MyProject />

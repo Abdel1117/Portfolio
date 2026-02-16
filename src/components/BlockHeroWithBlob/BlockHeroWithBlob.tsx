@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Dev from "../../../public/svg/dev_image.svg";
-import Link from "next/link";
+import { Button } from "@/UI/Button/Button";
+import { useRef } from "react";
+import { useFadeFromLeftOnScroll } from "@/Hooks/useFadeFromLeftOnScroll";
+import { useFadeFromRightOnScroll } from "@/Hooks/useFadeFromRightOnScroll";
 
 interface BlockHeroWithBlobProps {
   title: string;
@@ -17,28 +22,40 @@ export const BlockHeroWithBlob = ({
   buttonText,
   buttonLink,
 }: BlockHeroWithBlobProps) => {
+  const leftBlock = useRef<HTMLDivElement>(null);
+  const rightBlock = useRef<HTMLDivElement>(null);
+
+  useFadeFromLeftOnScroll(leftBlock, 0.2, 1);
+  useFadeFromRightOnScroll(rightBlock, 0.2, 1);
+
   return (
     <>
-      <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-[20px] my-14 mx-auto outline-1">
-        <div className="flex flex-col">
+      <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto">
+        <div ref={leftBlock} className="flex flex-col">
           <div className="flex flex-col items-center lg:items-start justify-center mb-8 lg:mb-12">
-            <h2 className="text-2xl lg:text-5xl font-bold">{title}</h2>
+            <h2 className="text-center lg:text-left text-3xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white-light">
+              {title}
+            </h2>
             <div className="flex items-center ">
-              <span className="h-[2px] w-[40px] bg-black mr-2" />
-              <h3 className="font-bold">{underTitle}</h3>
+              <span className="h-0.5 w-10 bg-green-light mr-2" />
+              <h3 className="text-center lg:text-left text-4xl md:text-5xl lg:text-6xl font-bold text-green-light">
+                {underTitle}
+              </h3>
             </div>
           </div>
           <div className="mb-6">
-            <p className="text-center leading-relaxed lg:text-start text-base lg:text-md xl:text-xl text-gray-light">
+            <p className="text-center lg:text-left text-lg md:text-xl text-black dark:text-gray-light lg:max-w-2xl">
               {para}
             </p>
           </div>
-
-          <button className="mx-auto lg:mx-0 p-2.5 outline-2 mt-auto mb-0 bg-white dark:bg-black text-black font-semibold dark:text-white max-w-[200px] hover:cursor-pointer">
-            {buttonText}
-          </button>
+          <div className="mx-auto lg:mx-0 mt-auto mb-0 ">
+            <Button text={buttonText} link={buttonLink} target="_blank" />
+          </div>
         </div>
-        <div className=" max-w-[90%] sm:max-w-[80%] lg:max-w-full mx-auto lg:mx-0">
+        <div
+          ref={rightBlock}
+          className=" max-w-[90%] sm:max-w-[80%] lg:max-w-full mx-auto lg:mx-0"
+        >
           <div className="relative overflow-hidden">
             <Image
               className="object-contain "
