@@ -23,7 +23,7 @@ export const FAQ = () => {
   useFadeFromRightOnScroll(rightBlock, 0.2, 1);
 
   return (
-    <section className="px-1 md:pt-28 md:pb-16 sm:px-4 lg:px-10 sm:max-w-7xl mx-auto">
+    <section className="px-4 md:pt-28 md:pb-16 sm:px-6 lg:px-10 max-w-7xl my-14 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
       <div
         ref={leftBlock}
         className="flex flex-col justify-center items-center mb-8 text-center"
@@ -41,7 +41,6 @@ export const FAQ = () => {
           />
         </div>
       </div>
-
       <div ref={rightBlock} className="max-w-4xl mx-auto">
         <FAQList items={faqData} />
       </div>

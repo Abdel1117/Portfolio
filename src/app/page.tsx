@@ -8,7 +8,7 @@ import { MyProject } from "@/components/MyProjects/MyProject";
 import { StackList } from "@/components/StackList/StackList";
 export default function Home() {
   return (
-    <main className="overflow-x-hidden outline-2">
+    <main className="overflow-x-hidden">
       <BlockHero />
       <BlockHeroWithBlob
         title="A propos de moi"

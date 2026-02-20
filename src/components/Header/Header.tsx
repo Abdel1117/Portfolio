@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ThemeButton } from "@/components/ThemeButton/ThemeButton";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import AA_Logo from "../../../public/images/logo.png";
+import Image from "next/image";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -34,10 +36,11 @@ export const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-white dark:bg-gray-900">
       <nav className="bg-white dark:bg-slate-light px-4 lg:px-6 py-6.5 ">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
-          <Link href="/" className="flex items-center">
-            <span className="self-center text-xl font-semibold whitespace-nowrap text-black dark:text-green-light">
-              AA
-            </span>
+          <Link
+            href="/"
+            className="flex items-center justify-center sm:justify-baseline mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <Image src={AA_Logo} width={75} height={75} alt="Flowbite Logo" />
           </Link>
           <div className="flex items-center lg:order-2">
             <ThemeButton />

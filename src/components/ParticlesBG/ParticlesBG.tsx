@@ -31,10 +31,6 @@ export const ParticlesBg = () => {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
-
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
@@ -96,13 +92,7 @@ export const ParticlesBg = () => {
   );
 
   if (init) {
-    return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
-    );
+    return <Particles id="tsparticles" options={options} />;
   }
 
   return <></>;
