@@ -100,11 +100,12 @@ export const ContactForm = () => {
           </div>
           <div>
             <p className="text-center md:text-left text-gray-light dark:text-white text-xl font-bold mb-4">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Perferendis quia vitae alias dicta aperiam nostrum.
+              Transformons votre idée en un produit concret grâce à une
+              expérience utilisateur soignée, une ingénierie robuste et une
+              stratégie de lancement conçue pour maximiser son impact.
             </p>
             <p className="text-center md:text-left text-gray-light dark:text-white text-base">
-              Parlons de votre prochain gros projet!
+              Parlons de votre prochain grand projet!
             </p>
           </div>
         </div>
